@@ -12,4 +12,31 @@ As this wiki user, I want to be able to:
 2. Quickly taking a look at the most recent notes taken;
 3. Have a powerfull search feature;
 
+## Concepts
+This section explains the concepts used.
+
+* **Pages:** wikis are a collection of interlinked pages;
+
+## Design
+### How to identify a wiki page
+When accessing a single wiki page, we'll want to uniquely identify it (a primary key, in database talk). We see two different options for that, with pros and cons:
+
+1. Use an existing attribute of the page, such as its titlei (or its slug):
+    * Pros: it is easier to recognize a page when you get just its URL (e.g., `https://example.com/my-fist-page`);
+    * Cons: the page history and connections are lost if you change the title of the page;
+1. Use an extra attribute, such as an id:
+    * Pros: you can change the page's title, but their links remain the same;
+    * Cons: it is harder to recognise a page, specially if UUIDs are used;
+## Possible items to deal with later on
+
+* Ruby version
+* System dependencies
+* Configuration
+* Database creation
+* Database initialization
+* How to run the test suite
+* Services (job queues, cache servers, search engines, etc.)
+* Deployment instructions
+
+## References
 
