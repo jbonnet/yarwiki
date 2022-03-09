@@ -6,11 +6,23 @@ So, when I decided I needed a more efficient wiki and improve my ruby-on-rails s
 **Note:** I've got a similar effort running for a long time, but using **go** [here](https://github.com/jbonnet/gwiki).
 
 ## Features
-As this wiki user, I want to be able to:
+As this wiki's user, I want to be able to:
 
 1. Quickly starting taking notes, without a new page having to be sent from the server;
 2. Quickly taking a look at the most recent notes taken;
 3. Have a powerfull search feature;
+
+These very highlevel features imply the following lowerlever user stories:
+
+As this wiki's user, I want to be able to:
+1. Click on a link or button and start writing the title/body of a new post, **so that** I can start writing the post without having to scroll and click the **Edit** link;
+2. See the most recently written post on top of the list of posts, **so that** previous posts are also avalilabe to be seen;
+3. Scroll to see older posts, without having to click a 'next page' link, **so that** access to older posts is faster;
+4. Click one specific post to see the whole post's body, **so that** I do not have to wait for an entire page load;
+5. Double click one specific post to edit it, **so that** I do not have to click a specific link or button to edit the post;
+
+All these User Stories show that, instead of a pure Wiki, what we're really for here is a **Blog** like interface, with interconnection between pages or posts made with wiki pages-like names.
+
 
 ## Concepts
 This section explains the concepts used.
