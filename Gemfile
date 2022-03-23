@@ -1,7 +1,7 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "2.7.4"
+ruby "2.7.1"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
 gem "rails", "~> 7.0.2", ">= 7.0.2.2"
@@ -74,3 +74,16 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+# Challenge José Bonnet
+group :development, :test do
+  gem 'rspec-rails', '5.1.1'
+  gem 'factory_bot_rails', '6.2.0'
+end
+
+group :test do
+  gem 'shoulda-matchers'
+  gem 'database_cleaner'
+  gem 'webmock', '3.14.0'
+end
+

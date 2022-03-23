@@ -11,7 +11,8 @@
 # It's strongly recommended that you check this file into your version control system.
 
 ActiveRecord::Schema[7.0].define(version: 2022_03_07_140305) do
-  create_table "pages", primary_key: "slug", id: :string, force: :cascade do |t|
+  create_table "pages", id: false, force: :cascade do |t|
+    t.string "slug", null: false
     t.string "title"
     t.text "body"
     t.datetime "created_at", null: false

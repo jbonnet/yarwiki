@@ -60,7 +60,7 @@ class PagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_page
-      @page = Page.find(params[:id])
+      @page = Page.find_by_slug(params[:slug])
     end
 
     # Only allow a list of trusted parameters through.
