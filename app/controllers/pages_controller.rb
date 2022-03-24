@@ -1,40 +1,33 @@
 class PagesController < ApplicationController
   before_action :set_page, only: %i[ show edit update destroy ]
 
-  # GET /pages or /pages.json
   def index
-    @pages = Page.all
+    @pages = Page.all.order('updated_at desc')
+    @page = Page.new
   end
 
-  # GET /pages/1 or /pages/1.json
   def show
   end
 
-  # GET /pages/new
   def new
     @page = Page.new
   end
 
-  # GET /pages/1/edit
   def edit
   end
 
-  # POST /pages or /pages.json
   def create
     @page = Page.new(page_params)
 
     respond_to do |format|
       if @page.save
-        format.html { redirect_to page_url(@page), notice: "Page was successfully created." }
-        format.json { render :show, status: :created, location: @page }
+        format.html { redirect_to pages_url, notice: "Page was successfully created" }
       else
         format.html { render :new, status: :unprocessable_entity }
-        format.json { render json: @page.errors, status: :unprocessable_entity }
       end
     end
   end
 
-  # PATCH/PUT /pages/1 or /pages/1.json
   def update
     respond_to do |format|
       if @page.update(page_params)
@@ -47,7 +40,6 @@ class PagesController < ApplicationController
     end
   end
 
-  # DELETE /pages/1 or /pages/1.json
   def destroy
     @page.destroy
 

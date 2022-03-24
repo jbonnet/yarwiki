@@ -1,12 +1,10 @@
 <div id="<%= dom_id page %>">
   <p class="my-5">
-    <strong class="block font-medium mb-1">Title:</strong>
-    <%= page.title %>
+    <strong class="block font-bold mb-1 text-3xl"><%= page.title %></strong>
   </p>
 
   <p class="my-5">
-    <strong class="block font-medium mb-1">Body:</strong>
-    <%= page.body %>
+    <strong class="block font-medium mb-1"><%= page.body %></strong>
   </p>
 
   <% if action_name != "show" %>

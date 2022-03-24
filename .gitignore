@@ -60,3 +60,5 @@ build-iPhoneSimulator/
 
 db/*.sqlite3
 log
+config/master.key
+
