@@ -1,15 +1,10 @@
-<div id="<%= dom_id page %>">
-  <p class="my-5">
-    <strong class="block font-bold mb-1 text-3xl"><%= page.title %></strong>
-  </p>
-
-  <p class="my-5">
-    <strong class="block font-medium mb-1"><%= page.body %></strong>
-  </p>
-
-  <% if action_name != "show" %>
-    <%= link_to "Show this page", page, class: "rounded-lg py-3 px-5 bg-gray-100 inline-block font-medium" %>
-    <%= link_to 'Edit this page', edit_page_path(page), class: "rounded-lg py-3 ml-2 px-5 bg-gray-100 inline-block font-medium" %>
-    <hr class="mt-6">
-  <% end %>
-</div>
+<%= turbo_frame_tag page do %>
+  <div class="page-card">
+    <p class="my-5"><strong class="block font-bold mb-1 text-3xl"><%= page.title %></strong></p>
+   <p class="my-5"><strong class="block font-medium mb-1"><%= page.body %></strong></p>
+    <div class="page-actions">
+      <%= link_to "Edit", edit_page_path(page), class: "mr2", data: { turbo_frame: dom_id(page) } %>
+      <%= button_to "Delete", page, method: :delete, class: "btn-danger", form: { data: { turbo_confirm: "Are you sure?" } } %>
+    </div>
+  </div>
+<% end %>

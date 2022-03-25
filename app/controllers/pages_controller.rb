@@ -19,12 +19,10 @@ class PagesController < ApplicationController
   def create
     @page = Page.new(page_params)
 
-    respond_to do |format|
-      if @page.save
-        format.html { redirect_to pages_url, notice: "Page was successfully created" }
-      else
-        format.html { render :new, status: :unprocessable_entity }
-      end
+    if @page.save
+      redirect_to pages_url, notice: "Page was successfully created" 
+    else
+      render :new, status: :unprocessable_entity 
     end
   end
 
